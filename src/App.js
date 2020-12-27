@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import { createStructuredSelector } from "reselect";
 import CheckoutPage from "./pages/checkout/checkout.componet";
+import { selectCollectionsForPreview } from "./redux/shop/shop.selectors";
 
 class App extends Component {
   unsubscribeFromAuth = null;
@@ -64,6 +65,7 @@ class App extends Component {
 
 const mapStateToPops = createStructuredSelector({
   currentUser: selectCurrentUser,
+  collectionsArray: selectCollectionsForPreview,
 });
 
 const mapDispatchToProps = (dispatch) => ({
